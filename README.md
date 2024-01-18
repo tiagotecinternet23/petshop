@@ -10,10 +10,10 @@ Após instalar o `styled-components`, ative o suporte à compilação dele pelo 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  // adicione estas linhas
   compiler: {
-    // adicione estas linhas
-    styledComponents: true, // adicione estas linhas
-  }, // adicione estas linhas
+    styledComponents: true,
+  },
 };
 
 module.exports = nextConfig;
