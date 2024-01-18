@@ -1,13 +1,27 @@
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import styled from "styled-components";
 
 export default function Menu() {
+  const rotaAtual = usePathname();
+
   return (
     <StyledNav>
-      <Link href="/">Blog</Link>
-      <Link href="/produtos">Produtos</Link>
-      <Link href="/sobre">Sobre</Link>
-      <Link href="/contato">Contato</Link>
+      <Link href="/" className={rotaAtual == "/" ? "ativo" : ""}>
+        Blog
+      </Link>
+      <Link
+        href="/produtos"
+        className={rotaAtual == "/produtos" ? "ativo" : ""}
+      >
+        Produtos
+      </Link>
+      <Link href="/sobre" className={rotaAtual == "/sobre" ? "ativo" : ""}>
+        Sobre
+      </Link>
+      <Link href="/contato" className={rotaAtual == "/contato" ? "ativo" : ""}>
+        Contato
+      </Link>
     </StyledNav>
   );
 }
@@ -42,5 +56,9 @@ const StyledNav = styled.nav`
       padding-left: 2rem;
       padding-right: 2rem;
     }
+  }
+
+  a.ativo {
+    background-color: black;
   }
 `;
