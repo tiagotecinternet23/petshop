@@ -5,21 +5,21 @@ import styled from "styled-components";
 export default function Menu() {
   const rotaAtual = usePathname();
 
+  // Solução da Zimbo para o desafio (branch 06)
+  const linkAtivo = (rota) => (rotaAtual === rota ? "ativo" : "");
+
   return (
     <StyledNav>
-      <Link href="/" className={rotaAtual == "/" ? "ativo" : ""}>
+      <Link href="/" className={linkAtivo("/")}>
         Blog
       </Link>
-      <Link
-        href="/produtos"
-        className={rotaAtual == "/produtos" ? "ativo" : ""}
-      >
+      <Link href="/produtos" className={linkAtivo("/produtos")}>
         Produtos
       </Link>
-      <Link href="/sobre" className={rotaAtual == "/sobre" ? "ativo" : ""}>
+      <Link href="/sobre" className={linkAtivo("/sobre")}>
         Sobre
       </Link>
-      <Link href="/contato" className={rotaAtual == "/contato" ? "ativo" : ""}>
+      <Link href="/contato" className={linkAtivo("/contato")}>
         Contato
       </Link>
     </StyledNav>
