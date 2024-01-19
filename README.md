@@ -7,7 +7,7 @@
 
 **Atenção:** toda a lógica/programação feita em relação ao <StyledListaPosts> deve ser migrada para o novo componente, exceto o `import` do `arrayPosts` que deve continuar na página inicial.
 
-Portanto, você deverá repassar o `arrayPosts` via `props` para o novo compontente.
+Portanto, você deverá repassar o `arrayPosts` via `props` para o novo componente.
 
 ## Branch 09-desafio-carregamento-do-array-posts
 
