@@ -18,7 +18,6 @@ export default function Sobre() {
 
         <Container>
           <h3>Missão</h3>
-
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit
             totam veritatis facilis asperiores placeat. Quos tempore
