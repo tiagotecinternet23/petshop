@@ -50,4 +50,33 @@ const StyledContato = styled.section`
   h2::before {
     content: "💌 ";
   }
+
+  form > div {
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+
+    & label {
+      font-weight: bold;
+      width: 30%;
+      display: flex;
+      align-items: center;
+    }
+
+    & input,
+    & textarea {
+      width: 70%;
+      border: none;
+      box-shadow: var(--sombra-box);
+      padding: 0.5rem;
+    }
+
+    & button {
+      background-color: var(--cor-primaria-fundo);
+      color: var(--cor-primaria);
+      padding: 1rem;
+      border: none;
+      cursor: pointer;
+    }
+  }
 `;
