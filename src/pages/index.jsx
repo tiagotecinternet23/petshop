@@ -17,12 +17,12 @@ export default function Home() {
       <StyledHome>
         <h2>Pet Notícias</h2>
         <StyledListaPosts>
-          {arrayPosts.map((posts) => {
+          {arrayPosts.map((post) => {
             return (
-              <article>
+              <article key={post.id}>
                 <Link href="">
-                  <h3>Título do post...</h3>
-                  <p>Subtítulo do post...</p>
+                  <h3> {post.titulo} </h3>
+                  <p> {post.subtitulo} </p>
                 </Link>
               </article>
             );
