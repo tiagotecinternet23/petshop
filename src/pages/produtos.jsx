@@ -1,3 +1,4 @@
+import Container from "@/components/ui/Container";
 import Head from "next/head";
 import styled from "styled-components";
 
@@ -15,33 +16,35 @@ export default function Produtos() {
       <StyledProdutos>
         <h2>Conheça nossos produtos</h2>
 
-        <article>
-          <h3>Banho</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis
-            quibusdam, optio iusto accusamus dignissimos reprehenderit enim?
-            Dolores, porro sequi laborum nulla eveniet nesciunt ducimus cum
-            culpa delectus quos, laudantium beatae.
-          </p>
-        </article>
-        <article>
-          <h3>Tosa</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis
-            quibusdam, optio iusto accusamus dignissimos reprehenderit enim?
-            Dolores, porro sequi laborum nulla eveniet nesciunt ducimus cum
-            culpa delectus quos, laudantium beatae.
-          </p>
-        </article>
-        <article>
-          <h3>Castração</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis
-            quibusdam, optio iusto accusamus dignissimos reprehenderit enim?
-            Dolores, porro sequi laborum nulla eveniet nesciunt ducimus cum
-            culpa delectus quos, laudantium beatae.
-          </p>
-        </article>
+        <Container>
+          <article>
+            <h3>Banho</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis
+              quibusdam, optio iusto accusamus dignissimos reprehenderit enim?
+              Dolores, porro sequi laborum nulla eveniet nesciunt ducimus cum
+              culpa delectus quos, laudantium beatae.
+            </p>
+          </article>
+          <article>
+            <h3>Tosa</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis
+              quibusdam, optio iusto accusamus dignissimos reprehenderit enim?
+              Dolores, porro sequi laborum nulla eveniet nesciunt ducimus cum
+              culpa delectus quos, laudantium beatae.
+            </p>
+          </article>
+          <article>
+            <h3>Castração</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis
+              quibusdam, optio iusto accusamus dignissimos reprehenderit enim?
+              Dolores, porro sequi laborum nulla eveniet nesciunt ducimus cum
+              culpa delectus quos, laudantium beatae.
+            </p>
+          </article>
+        </Container>
       </StyledProdutos>
     </>
   );
