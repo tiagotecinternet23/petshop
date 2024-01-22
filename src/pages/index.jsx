@@ -5,14 +5,23 @@ import { useEffect, useState } from "react";
 
 export default function Home() {
   const [listaDePosts, setListaDePosts] = useState([]);
-
   useEffect(() => {
     const carregarDados = async () => {
-      const resposta = await fetch(`http://10.20.46.20:2112/posts`);
-      const dados = await resposta.json();
-      setListaDePosts(dados);
-    };
+      try {
+        const resposta = await fetch(`http://10.20.46.20:2112/posts`);
 
+        if (!resposta.ok) {
+          throw new Error(
+            `Erro requisição: ${resposta.status} - ${resposta.statusText}`
+          );
+        }
+
+        const dados = await resposta.json();
+        setListaDePosts(dados);
+      } catch (error) {
+        console.error("Deu ruim: " + error.message);
+      }
+    };
     carregarDados();
   }, []);
 
