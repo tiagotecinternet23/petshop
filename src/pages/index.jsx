@@ -6,7 +6,7 @@ import { useState } from "react";
 /* Função getStaticProps 
 Utilizada para execução de código server-side (neste caso, fetch na API)
 com o objetivo de gerar props com os dados processados. */
-export async function getStaticProps() {
+export async function getServerSideProps() {
   console.log("Código de servidor (não aparece no cliente)...");
 
   try {
