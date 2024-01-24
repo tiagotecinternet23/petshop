@@ -13,10 +13,7 @@ export async function getStaticProps() {
       throw new Error(`Erro: ${resposta.status} - ${resposta.statusText}`);
     }
 
-    /* Extraindo as categorias dos posts para um novo array */
     const categorias = dados.map((post) => post.categoria);
-
-    /* Gerando um array de categorias ÚNICAS */
     const categoriasUnicas = [...new Set(categorias)];
 
     return {
@@ -37,9 +34,6 @@ export default function Home({ posts, categorias }) {
   const [listaDePosts, setListaDePosts] = useState(posts);
 
   const filtrar = (event) => {
-    /* Atenção: utilize textContent em vez de innerText
-    pois textContent captura o texto real do HTML/JSX sem 
-    levar em consideração estilos CSS. */
     const categoriaEscolhida = event.currentTarget.textContent;
     console.log(categoriaEscolhida);
 
@@ -71,6 +65,7 @@ export default function Home({ posts, categorias }) {
               </button>
             );
           })}
+          <button className="limpar">Limpar filtro</button>
         </StyledCategorias>
 
         <ListaPosts posts={listaDePosts} />
@@ -98,6 +93,16 @@ const StyledCategorias = styled.div`
     &:focus {
       background-color: var(--cor-secundaria-fundo-hover);
       cursor: pointer;
+    }
+  }
+
+  .limpar {
+    background-color: gray;
+    &:hover {
+      background-color: slategray;
+    }
+    &::before {
+      content: "🧹 ";
     }
   }
 `;
