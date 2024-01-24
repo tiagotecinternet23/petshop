@@ -36,13 +36,22 @@ export default function Home({ posts, categorias }) {
 
   const filtrar = (event) => {
     const categoriaEscolhida = event.currentTarget.textContent;
-    console.log(categoriaEscolhida);
 
     const novaListaDePosts = posts.filter(
       (post) => post.categoria === categoriaEscolhida
     );
 
+    // Sinalizando o state como filtro ativo (true)
+    setFiltroAtivo(true);
     setListaDePosts(novaListaDePosts);
+  };
+
+  const limparFiltro = () => {
+    // Sinalizando o state como filtro inativo (false)
+    setFiltroAtivo(false);
+
+    // Atualizando o state da listaDePosts para os posts originais
+    setListaDePosts(posts);
   };
 
   return (
@@ -67,7 +76,11 @@ export default function Home({ posts, categorias }) {
             );
           })}
 
-          {filtroAtivo && <button className="limpar">Limpar filtro</button>}
+          {filtroAtivo && (
+            <button onClick={limparFiltro} className="limpar">
+              Limpar filtro
+            </button>
+          )}
         </StyledCategorias>
 
         <ListaPosts posts={listaDePosts} />
