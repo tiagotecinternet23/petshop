@@ -7,7 +7,7 @@ import serverApi from "./api/server";
 /* Função getStaticProps 
 Utilizada para execução de código server-side (neste caso, fetch na API)
 com o objetivo de gerar props com os dados processados. */
-export async function getServerSideProps() {
+export async function getStaticProps() {
   console.log("Código de servidor (não aparece no cliente)...");
 
   try {
