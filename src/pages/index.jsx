@@ -8,8 +8,6 @@ import serverApi from "./api/server";
 Utilizada para execução de código server-side (neste caso, fetch na API)
 com o objetivo de gerar props com os dados processados. */
 export async function getStaticProps() {
-  console.log("Código de servidor (não aparece no cliente)...");
-
   try {
     const resposta = await fetch(`${serverApi}/posts`);
     const dados = await resposta.json();
@@ -29,6 +27,9 @@ export async function getStaticProps() {
     };
   } catch (error) {
     console.error("Deu ruim: " + error.message);
+    return {
+      notFound: true,
+    };
   }
 }
 
