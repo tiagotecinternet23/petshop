@@ -37,7 +37,11 @@ export default function Home({ posts, categorias }) {
   const [listaDePosts, setListaDePosts] = useState(posts);
 
   const filtrar = (event) => {
-    const categoriaEscolhida = event.currentTarget.innerText;
+    /* Atenção: utilize textContent em vez de innerText
+    pois textContent captura o texto real do HTML/JSX sem 
+    levar em consideração estilos CSS. */
+    const categoriaEscolhida = event.currentTarget.textContent;
+    console.log(categoriaEscolhida);
 
     const novaListaDePosts = posts.filter(
       (post) => post.categoria === categoriaEscolhida
@@ -83,6 +87,7 @@ const StyledCategorias = styled.div`
   flex-wrap: wrap;
 
   button {
+    text-transform: capitalize;
     border: none;
     background-color: var(--cor-secundaria-fundo);
     color: #f7f7f7;
