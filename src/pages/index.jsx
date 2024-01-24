@@ -17,10 +17,14 @@ export async function getStaticProps() {
     const categorias = dados.map((post) => post.categoria);
     console.log(categorias);
 
+    /* Gerando um array de categorias ÚNICAS */
+    const categoriasUnicas = [...new Set(categorias)];
+    console.log(categoriasUnicas);
+
     return {
       props: {
         posts: dados,
-        categorias: [], // [] provisório
+        categorias: categoriasUnicas,
       },
     };
   } catch (error) {
