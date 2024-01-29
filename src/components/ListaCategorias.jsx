@@ -1,6 +1,12 @@
 import styled from "styled-components";
 
-export default function ListaCategorias() {
+export default function ListaCategorias({
+  categorias,
+  categoriaAtiva,
+  filtrar,
+  limparFiltro,
+  filtroAtivo,
+}) {
   return (
     <StyledCategorias>
       {categorias.map((categoria, indice) => {
