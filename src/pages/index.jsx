@@ -76,11 +76,13 @@ export default function Home({ posts, categorias }) {
         <h2>Pet Notícias</h2>
 
         <ListaCategorias
-          categorias={categorias}
-          categoriaAtiva={categoriaAtiva}
-          filtrar={filtrar}
-          limparFiltro={limparFiltro}
-          filtroAtivo={filtroAtivo}
+          {...{
+            categorias,
+            categoriaAtiva,
+            onFiltrar: filtrar,
+            onLimparFiltro: limparFiltro,
+            filtroAtivo,
+          }}
         />
         <ListaPosts posts={listaDePosts} />
       </StyledHome>

@@ -1,19 +1,13 @@
 import styled from "styled-components";
 
-export default function ListaCategorias({
-  categorias,
-  categoriaAtiva,
-  filtrar,
-  limparFiltro,
-  filtroAtivo,
-}) {
+export default function ListaCategorias(props) {
   return (
     <StyledCategorias>
-      {categorias.map((categoria, indice) => {
+      {props.categorias.map((categoria, indice) => {
         return (
           <button
-            className={categoria === categoriaAtiva ? "ativo" : ""}
-            onClick={filtrar}
+            className={categoria === props.categoriaAtiva ? "ativo" : ""}
+            onClick={props.onFiltrar}
             key={indice}
           >
             {categoria}
@@ -21,8 +15,8 @@ export default function ListaCategorias({
         );
       })}
 
-      {filtroAtivo && (
-        <button onClick={limparFiltro} className="limpar">
+      {props.filtroAtivo && (
+        <button onClick={props.onLimparFiltro} className="limpar">
           Limpar filtro
         </button>
       )}
