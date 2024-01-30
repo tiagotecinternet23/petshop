@@ -1,8 +1,3 @@
 // api/server.js
-
-const porta = 2112;
-const endereco = "10.20.46.20";
-
-const serverApi = `http://${endereco}:${porta}`;
-
+const serverApi = `https://petshop-tiago-2024-default-rtdb.firebaseio.com/`;
 export default serverApi;
