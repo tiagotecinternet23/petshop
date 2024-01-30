@@ -31,12 +31,12 @@ export async function getStaticProps() {
       };
     });
 
-    const categorias = dados.map((post) => post.categoria);
+    const categorias = arrayDePosts.map((post) => post.categoria);
     const categoriasUnicas = [...new Set(categorias)];
 
     return {
       props: {
-        posts: dados,
+        posts: arrayDePosts,
         categorias: categoriasUnicas,
       },
     };
