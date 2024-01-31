@@ -4,6 +4,7 @@ export default function Document() {
   return (
     <Html lang="pt-br">
       <Head>
+        <link rel="manifest" href="/manifest.json" />
         <link
           rel="shortcut icon"
           href="/images/favicon.png"
