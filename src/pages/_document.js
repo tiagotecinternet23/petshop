@@ -5,6 +5,12 @@ export default function Document() {
     <Html lang="pt-br">
       <Head>
         <link rel="manifest" href="/manifest.json" />
+        <meta name="application-name" content="PetShop App" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content="PWA App" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="theme-color" content="#000000" />
         <link
           rel="shortcut icon"
           href="/images/favicon.png"
