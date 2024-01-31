@@ -19,7 +19,7 @@ export default function Document() {
         />
         <meta name="author" content="Tiago B. dos Santos" />
       </Head>
-            <script>0</script>
+            
       <body>
         <Main />
         <NextScript />
