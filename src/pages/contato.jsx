@@ -49,6 +49,7 @@ export default function Contato() {
 
         <Container>
           <form
+            autoComplete="off"
             action=""
             method="post"
             onSubmit={handleSubmit((dados) => {
@@ -57,8 +58,21 @@ export default function Contato() {
           >
             <div>
               <label htmlFor="nome">Nome: </label>
-              <input {...register("nome")} type="text" name="nome" id="nome" />
+              <input
+                {...register("nome", { required: true })}
+                type="text"
+                name="nome"
+                id="nome"
+              />
             </div>
+
+            {/* ? é conhecido  "Optional Chaining [encadeamento opcional]"
+É usado para evitar erros caso uma propriedade de um objeto seja
+null ou undefined. Caso não seja null/undefined, aí sim verificamos
+se o type é required para seguir com a validação. */}
+
+            {errors.nome?.type == "required" && <p>Você deve digitar o nome</p>}
+
             <div>
               <label htmlFor="email">E-mail: </label>
               <input
