@@ -10,9 +10,11 @@
 
 Arquivo chamado `manifest.json` com informações gerais sobre o aplicativo: nome, descrição, ícones, cores etc.
 
+No caso do Next.js, este arquivo deve ser colocado na pasta `public` e adicionado via `meta tag` na página `_document.js`.
+
 2. Criar/Configurar um Service Worker (JavaScript)
 
-`Service Worker` é um script que o navegador executa em segundo plano, de forma independente da interface ou de interações do usuário. Ele permite usar recursos que transformam a aplicação em PWA, como instalação/desinstalação, cache offline, notificações etc.
+`Service Worker` é um script que o navegador executa em segundo plano, de forma independente da interface ou de interações do usuário. Ele permite usar recursos que transformam a aplicação em PWA, como instalação/desinstalação, cache offline, notificações etc. No caso do Next.js, o Service Worker será criado/configurado automaticamente com o auxílio da lib `next-pwa` e com ajustes no `next.config.js`.
 
 3. Publicação em servidor com suporte à HTTPS
 
